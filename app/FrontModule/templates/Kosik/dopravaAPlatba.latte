@@ -1,0 +1,19 @@
+{block title}Doprava a platba - krok č.1{/block}
+{block content}
+{control shippingAndPaymentForm}
+{if $productsInCart}
+    {foreach $productsInCart as $productInCart}
+        {if $productInCart}
+            <a href="{link removeProduct! $productInCart['id']}"><i class="fas fa-times fa-xs"></i>
+            <img src="{$basePath}/img/products/{$productInCart['photo']}" alt="{$productInCart['productName']|noescape}" style="object-fit: cover;height: 130px;margin-top: 15px">
+            {$productInCart['productName']|noescape}
+                <a href="{link addProductNumber! $productInCart['id']}">+</a>
+                <a href="{link removeProductNumber! $productInCart['id']}" {if $productInCart['quantity']<2}onclick="return confirm('Opravdu chcete produkt odstranit z košíku?')"{/if}>-</a>
+            {$productInCart['quantity']} Ks
+            {$productInCart['catalogPriceVat']} Kč
+        {/if}
+    {/foreach}
+{else}
+        Košík je prázdný
+{/if}
+        Celkem s DPH: {ceil($totalPrice)} Kč

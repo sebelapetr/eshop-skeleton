@@ -1,0 +1,23 @@
+{block title}Osobní údaje - krok č.2{/block}
+{block content}
+    {control personalDataForm}
+            {if $productsInCart}
+                {foreach $productsInCart as $productInCart}
+                    {if $productInCart}
+                            <a href="{link removeProduct! $productInCart['id']}"><i class="fas fa-times fa-xs"></i></a>
+                                <img src="{$basePath}/img/products/{$productInCart['photo']}" alt="{$productInCart['productName']|noescape}">
+
+                                    {$productInCart['productName']|noescape}
+
+                                    <a href="{link addProductNumber! $productInCart['id']}" style="font-weight: 300;padding: 2px 10px;color: black;background:#f3f3f3;">+</a>
+                                    <a href="{link removeProductNumber! $productInCart['id']}" style="font-weight: 300;padding: 2px 10px;color: black;background: #f3f3f3;" {if $productInCart['quantity']<2}onclick="return confirm('Opravdu chcete produkt odstranit z košíku?')"{/if}>-</a>
+                                    {$productInCart['quantity']} Ks{$productInCart['catalogPriceVat']} Kč
+                    {/if}
+                {/foreach}
+            {else}
+                Košík je prázdný
+            {/if}
+            Doprava: {$shipping->shipping==1?'Doručení na adresu přepravcem GEIS':'Osobní odběr na pobočce v Brně'}
+            {$shipping->shipping==1?'98 Kč':'Zdarma'}
+                        Platba: {$payment->payment==1?'Dobírka GEIS':'Převodem na účet'}{$payment->payment==1?'30 Kč':'Zdarma'}
+                    <h3>Celkem s DPH: {ceil($totalPrice)} Kč</h3>

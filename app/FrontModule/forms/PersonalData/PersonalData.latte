@@ -1,0 +1,118 @@
+<form  n:name="personalDataForm">
+        <h2 style="font-size:19px;font-weight:300">Osobní údaje</h2>
+
+            <label for="inputEmail4">Jméno *</label>
+            <input n:name="name" id="inputEmail4" required="required" placeholder="Pavel">
+
+
+            <label for="inputEmail4">Příjmení *</label>
+            <input n:name="surname" id="inputEmail4" required="required" placeholder="Novák">
+
+
+            <label for="inputEmail4">Telefon *</label>
+            <input n:name="telephone" id="inputEmail4" required="required" placeholder="+420605200686">
+
+            <label for="inputEmail4">E-mail *</label>
+            <input n:name="email" id="inputEmail4" required="required" placeholder="pavel.novak@mail.cz">
+
+
+        <h2 style="font-size:19px;font-weight:300;">Adresa</h2>
+
+            <label for="inputEmail4">Ulice a číslo popisné *</label>
+            <input n:name="street" id="inputEmail4" required="required" placeholder="Ulice 123">
+
+
+            <label for="inputEmail4">Město *</label>
+            <input n:name="city" id="inputEmail4" required="required" placeholder="Brno">
+
+
+            <label for="inputEmail4">PSČ *</label>
+            <input n:name="psc" id="inputEmail4" required="required" placeholder="60200">
+
+
+            <input type="checkbox" id="company" onchange="handleChange(this);"><label for="company" style="font-weight: 300"> Nakupuji na firmu</label>
+
+
+        <div id="company-hidden">
+            <h2 style="font-size:19px;font-weight:300">Firemní údaje (Nakupuji na firmu)</h2>
+            <p style="color:rgba(0,0,0,.3)">(nejsme plátci DPH)</p>
+
+                <label for="inputEmail4">Firma *</label>
+                <input n:name="company" id="inputEmail4"  placeholder="">
+
+                <label for="inputEmail4">IČO *</label>
+                <input n:name="ico" id="inputEmail4"  placeholder="">
+
+            {*
+
+                <label for="inputEmail4">DIČ</label>
+                <input n:name="dic" id="inputEmail4"  placeholder="">
+
+            *}
+
+        <script>
+            function handleChange(checkbox) {
+                if(checkbox.checked == true){
+                    document.getElementById("company-hidden").style.display = "block";
+                }else{
+                    document.getElementById("company-hidden").style.display = "none";
+                }
+            }
+        </script>
+        </div>
+            <input type="checkbox" id="adress" onchange="changeAddress(this);"><label for="adress" style="font-weight: 300"> Doručit na jinou adresu</label>
+
+        <div id="adress-hidden" style="display:none;">
+            <h2 style="font-size:19px;font-weight:300">Doručit na jinou adresu</h2>
+
+                <label for="inputEmail4">Jméno *</label>
+                <input n:name="deliveryName" id="inputEmail4"  placeholder="">
+
+
+                <label for="inputEmail4">Příjmení *</label>
+                <input n:name="deliverySurname" id="inputEmail4"  placeholder="">
+
+
+                <label for="inputEmail4">Firma</label>
+                <input n:name="deliveryCompany" id="inputEmail4"  placeholder="">
+
+
+                <label for="inputEmail4">Ulice a číslo popisné *</label>
+                <input n:name="deliveryStreet" id="inputEmail4"  placeholder="">
+
+
+                <label for="inputEmail4">Město *</label>
+                <input n:name="deliveryCity" id="inputEmail4"  placeholder="">
+
+
+                <label for="inputEmail4">PSČ *</label>
+                <input n:name="deliveryPsc" id="inputEmail4"  placeholder="">
+        </div>
+
+
+        <script>
+            function changeAddress(checkbox) {
+                if(checkbox.checked == true){
+                    document.getElementById("adress-hidden").style.display = "block";
+                }else{
+                    document.getElementById("adress-hidden").style.display = "none";
+                }
+            }
+        </script>
+
+        <h2 style="font-size:19px;font-weight:300">Poznámka</h2>
+
+            <label for="inputEmail4">Vaše poznámka</label>
+            <textarea n:name="note" class="form-control"></textarea>
+
+
+        <p>Informace, které nám předáváte, zpracováváme podle <a href="{plink OchranaOsobnichUdaju:}">pravidel zpracování osobních údajů.</a></p>
+        <p>
+            <input type="checkbox" name="terms" id="termsAndConditions" required>
+            <label for="termsAndConditions">Souhlasím s <a href="{plink ObchodniPodminky:}">obchodními podmínkami.</a></label>
+        </p>
+
+        <a href="{plink Kosik:dopravaAPlatba}">Zpět k dopravě a platbě</a>
+        <input n:name="submit">
+
+</form>

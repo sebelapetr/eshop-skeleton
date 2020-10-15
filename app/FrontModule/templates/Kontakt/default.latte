@@ -1,0 +1,59 @@
+{block title}Kontaktujte nás{/block}
+{block content}
+<div class="col-sm-6">
+    <div class="col-sm-12 proces">
+        <h3 style="margin-bottom:10px;padding-bottom: 5px;">Kamenné výdejní místo</h3>
+        <p style="font-weight:300;margin-bottom:15px">Nebo nás přijďte navštívit osobně na naší výdejně!</p>
+        <div class="col-sm-6" style="padding-left: 0;">
+            <table class="doprava" style="margin:0;width: 100%">
+                <tr><td class="radek1">Ulice: </td><td>Bayerova 29</td></tr>
+                <tr><td class="radek1">Město: </td><td>602 00 Brno - střed</td></tr>
+            </table>
+            <div id="mapa" class="col-sm-12" style="height: 185px"></div>
+            <script type="text/javascript" src="{$basePath}/js/map.js"></script>
+        </div>
+        <div class="col-sm-6" style="padding-right: 0;">
+            <table class="doprava" style="margin:0;width: 100%">
+                <tr><td colspan="3">Otevírací doba</td></tr>
+                <tr class="radek1"><td>Den</td><td>Od</td><td>Do</td></tr>
+                <tr><td>Pondělí</td><td>8:30</td><td>16:30</td></tr>
+                <tr><td>Úterý</td><td>8:30</td><td>16:30</td></tr>
+                <tr><td>Středa</td><td>8:30</td><td>16:30</td></tr>
+                <tr><td>Čtvrtek</td><td>8:30</td><td>16:30</td></tr>
+                <tr><td>Pátek</td><td>8:30</td><td>16:30</td></tr>
+            </table>
+        </div>
+    </div>
+    <div class="col-sm-12 proces">
+        <h3>Fakturační adresa</h3>
+        <table class="doprava" style="margin:0;">
+            <tr><td colspan="2">Petr Šebela</td></tr>
+            <tr><td colspan="2">Na Větřáku 691</td></tr>
+            <tr><td colspan="2">679 06 Jedovnice</td></tr>
+            <tr><td>IČ:</td><td> 06364896</td></tr>
+            <tr><td>Banka:</td><td>Fio banka a.s.</td></tr>
+            <tr><td>Číslo účtu: </td><td>2001461035/2010</td></tr>
+        </table>
+    </div>
+</div>
+<div class="col-sm-6">
+    <div class="col-sm-12 proces">
+        <h3 style="margin-bottom:10px;padding-bottom: 5px;">Kontakt</h3>
+        <p style="font-weight:300;margin-bottom:5px">V případě potřeby nás neváhejte kontaktovat!</p>
+        <table class="doprava" style="margin: 0">
+            <tr class="radek1"><td colspan="2">Email</td></tr>
+            <tr><td>Pomoc s nákupem</td><td>info@animalko.cz</td></tr>
+            {*<tr><td>Pomoc s objednávkou a reklamace</td><td>podpora@animalko.cz</td></tr>
+            <tr><td>Obchod a partnerství</td><td>sebela@animalko.cz</td></tr>*}
+        </table>
+        <table class="doprava" style="margin: 0;margin-top:15px;">
+            <tr class="radek1"><td colspan="2">Telefonní kontakt</td></tr>
+            <tr><td>Pomoc s nákupem</td><td>+420 605 200 686</td></tr>
+            {*<tr><td>Pomoc s objednávkou / zbožím</td><td>+420 605 200 686</td></tr>
+            <tr><td>Obchod a partnerství</td><td>+420 605 200 686</td></tr>*}
+        </table>
+    </div>
+    <div class="col-sm-12 proces" id="formular">
+        {control newQuoteForm}
+    </div>
+</div>

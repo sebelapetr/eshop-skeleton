@@ -1,0 +1,24 @@
+<a href="{link UvodniStrana:default}">Úvodní strana</a>
+<a href="{link DopravaAPlatba:default}">Doprava a platba</a>
+<a href="{link OchranaOsobnichUdaju:}">Ochrana osobních údajů</a>
+<a href="{link Reklamace:default}">Reklamace</a>
+<a href="{link OnlinePodpora:default}">Online podpora</a>
+<a href="{link Kontakt:default}">Kontakt</a>
+{control findForm}
+<a href="{link Kosik:dopravaAPlatba}">Košík</a>
+
+<ul>
+{foreach $parentCategories as $parentCategory}
+
+        <li><a href="{link Kategorie:default, $parentCategory->category->id}">{$parentCategory->category->categoryName}</a></li>
+
+        {var $childCategories = $presenter->getChildCategories($parentCategory->category)}
+
+        <ul>
+        {foreach $childCategories as $childCategory}
+            <li><a href="{link Kategorie:default, $childCategory->category->id}">{$childCategory->category->categoryName}</a></li>
+        {/foreach}
+        </ul>
+
+{/foreach}
+</ul>
